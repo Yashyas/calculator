@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container,.keypad,.display,.numpad,.operator{
+    border: solid black 2px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    justify-content: space-around;
+    align-items: center;
+}
+.display{
+    width:380px;
+    height:100px;
+}
+.keypad{
+    width:380px;
+    height:380px;
+    display: flex;
+    
+}
+.numpad{
+    margin:10px;
+    width: 280px;
+    height:360px ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.operator{
+    margin: 10px;
+    width:85px ;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+.keyrows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.numkeys,.operation{
+    border: solid black 1px;
+}
+.numkeys{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: x-large;
+    /* margin: 1px; */
+}
+.operation{
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    font-size:xx-large;
+}

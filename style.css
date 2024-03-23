@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container,.keypad,.display,.numpad,.operator{
+.container,.keypad,.display{
     border: solid black 2px;
 }
 .container{
@@ -13,15 +13,18 @@ body{
     height: 500px;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(193, 193, 238);
 }
 .display{
     width:380px;
     height:100px;
+    background-color: aliceblue;
 }
 .keypad{
     width:380px;
     height:380px;
     display: flex;
+    background-color: rgb(156, 156, 170);
     
 }
 .numpad{
@@ -39,6 +42,7 @@ body{
     height: 360px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 .keyrows{
     display: flex;
@@ -49,15 +53,22 @@ body{
     border: solid black 1px;
 }
 .numkeys{
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    font-size: x-large;
+    width: 82px;
+    height: 84px;
+    
+    background-color: aliceblue;
     /* margin: 1px; */
 }
 .operation{
-    width: 80px;
-    height: 70px;
+    width: 74px;
+    height: 68px;
+    
+    background-color: rgb(62, 77, 110);
+}
+p{
     text-align: center;
+    font-size: x-large;
+}
+.operation p{
     font-size:xx-large;
 }

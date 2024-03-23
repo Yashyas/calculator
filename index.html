@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="container">
         <div class="display">
-
+            <p id="display"></p>
         </div>
         <div class="keypad">
             <div class="numpad">
                <div class="keyrows">
-                    <div class="numkeys"><p>1</p></div>
-                    <div class="numkeys"><p>2</p></div>
-                    <div class="numkeys"><p>3</p></div>
+                    <div class="numkeys" id="1"><p>1</p></div>
+                    <div class="numkeys" id="2"><p>2</p></div>
+                    <div class="numkeys" id="3"><p>3</p></div>
                </div>
                <div class="keyrows">
-                    <div class="numkeys"><p>4</p></div>
-                    <div class="numkeys"><p>5</p></div>
-                    <div class="numkeys"><p>6</p></div>
+                    <div class="numkeys" id="4"><p>4</p></div>
+                    <div class="numkeys" id="5"><p>5</p></div>
+                    <div class="numkeys" id="6"><p>6</p></div>
                </div>
                <div class="keyrows">
-                    <div class="numkeys"><p>7</p></div>
-                    <div class="numkeys"><p>8</p></div>
-                    <div class="numkeys"><p>9</p></div>
+                    <div class="numkeys" id="7"><p>7</p></div>
+                    <div class="numkeys" id="8"><p>8</p></div>
+                    <div class="numkeys" id="9"><p>9</p></div>
                </div>
                <div class="keyrows">
-                    <div class="numkeys"><p>.</p></div>
-                    <div class="numkeys"><p>0</p></div>
-                    <div class="numkeys"><p>CE</p></div>
+                    <div class="numkeys" id="."><p>.</p></div>
+                    <div class="numkeys" id="0"><p>0</p></div>
+                    <div class="numkeys" id="CE"><p>CE</p></div>
                </div>
             </div>
             <div class="operator">
-                <div class="operation"><p>+</p></div>
-                <div class="operation"><p>-</p></div>
-                <div class="operation"><p>*</p></div>
-                <div class="operation"><p>/</p></div>
-                <div class="operation"><p>=</p></div>
+                <div class="operation" id="+"><p>+</p></div>
+                <div class="operation" id="-"><p>-</p></div>
+                <div class="operation" id="*"><p>*</p></div>
+                <div class="operation" id="/"><p>/</p></div>
+                <div class="operation" id="="><p>=</p></div>
             </div>
         </div>
     </div>

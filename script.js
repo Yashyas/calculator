@@ -1,27 +1,3 @@
-// add 
-function add(a,b){
-    return a + b ;
-    display();
-}
-
-// subtract 
-function subtract(a,b){
-    return a - b ;
-    display();
-}
-
-// multiply 
-function multiply(a,b){
-    return a * b ;
-    display();
-}
-
-// divide 
-function divide(a,b){
-    return a / b ;
-    display();
-}
-
 // display result 
 function display(){
     let disp = a + operation + b ;
@@ -32,57 +8,88 @@ function display(){
 function operate(a,operator,b){
     switch(operator){
         case '+':
-            add(a,b)
-            break;
+            return a+b;
         case '-':
-            subtract(a,b)
-            break;
+            return a-b;
         case '*':
-            multiply(a,b)
-            break;
+            return a*b;
         case '/':
-            divide(a,b)
-            break;
+            if(b=0){
+               return 'Undefined';
+            }
+            else{
+                return a/b;
+            }
+            
     }
 
 }
 
+// Select keys from numpad 
 let keys = document.querySelectorAll('.numkeys');
 keys.forEach(function(numkey){
-    numkey.addEventListener('click',keyDecision);
-});
-let actionkeys = document.querySelectorAll('.operation');
-actionkeys.forEach(function(actionkey){
-    actionkey.addEventListener('click',keyDecision);
+    numkey.addEventListener('click',()=>keyDecision(numkey));
 });
 
+// Select keys from action keys 
+let actionkeys = document.querySelectorAll('.operation');
+actionkeys.forEach(function(actionkey){
+    actionkey.addEventListener('click',()=>keyDecision(actionkey));
+});
+
+// Decision making function for Event Listener 
 function keyDecision(event){
     let numArr = ['1','2','3','4','5','6','7','8','9','0','.'];
     let action = ['CE','+','-','*','/','='];
     if(numArr.includes(event.id)){
         b = b + event.id;
-        // display();
+        display();
         console.log(event.id);
     }
     else if(action.includes(event.id)){
         if(event.id == 'CE'){
-            clear();
+            clear();   
         }
         else if(event.id == '='){
-            operate(Number(a),operation,Number(b));
+            calculate();
         }
         else{
-            a = b;
-            b='';
-            operation = event.id;
+            if(operation.length<1){
+                a = b;
+                b='';
+                operation = event.id;
+                display();
+                console.log(operation);
+            }
+            else{
+                // In case more than 1 operator is entered 
+                console.log(operation);
+                a = operate(Number(a),operation.charAt(0),Number(b));
+                b='';
+                operation='';
+                display();
+                operation = event.id;
+                display();
+            }
+            
         }
         
     }
 }
+
+// Funnction to clear all variables 
 function clear(){
     a='';
     b='';
     operation ='';
+    display();
+}
+
+function calculate(){
+    b = operate(Number(a),operation,Number(b));
+    a='';
+   operation ='';
+    display();
 }
 let a = '';
 let b = '';

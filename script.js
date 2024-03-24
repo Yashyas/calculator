@@ -37,9 +37,15 @@ function keyDecision(event){
     let numArr = ['1','2','3','4','5','6','7','8','9','0','.'];
     let action = ['CE','+','-','*','/','='];
     if(numArr.includes(event.id)){
-        b = b + event.id;
-        display();
-        console.log(event.id);
+        if(b.charAt(b.length-1 && event.id== '.')=='.'){
+            console.log('decimal');
+        }
+        else{
+            b = b + event.id;
+            display();
+            console.log(event.id);
+        }
+        
     }
     else if(action.includes(event.id)){
         if(event.id == 'CE'){

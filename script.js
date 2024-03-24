@@ -14,12 +14,7 @@ function operate(a,operator,b){
         case '*':
             return a*b;
         case '/':
-            if(b=0){
-               return 'Undefined';
-            }
-            else{
-                return a/b;
-            }
+            return a/b;
             
     }
 
@@ -51,7 +46,13 @@ function keyDecision(event){
             clear();   
         }
         else if(event.id == '='){
-            calculate();
+            if(a==''){
+                // console.log('No A');
+            }
+            else{
+                calculate();
+            }
+            
         }
         else{
             if(operation.length<1){
@@ -64,12 +65,19 @@ function keyDecision(event){
             else{
                 // In case more than 1 operator is entered 
                 console.log(operation);
-                a = operate(Number(a),operation.charAt(0),Number(b));
-                b='';
-                operation='';
-                display();
-                operation = event.id;
-                display();
+                // in case of two or more multiply and divide 
+                if(b=='' ){
+                    operation = event.id;
+                    display();
+                }
+                else{
+                    a = operate(Number(a),operation.charAt(0),Number(b));
+                    b='';
+                    operation='';
+                    display();
+                    operation = event.id;
+                    display(); 
+                }
             }
             
         }

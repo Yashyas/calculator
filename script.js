@@ -38,12 +38,11 @@ function keyDecision(event){
     let action = ['CE','+','-','*','/','='];
     if(numArr.includes(event.id)){
         if(b.charAt(b.length-1 && event.id== '.')=='.'){
-            console.log('decimal');
+            
         }
         else{
             b = b + event.id;
             display();
-            console.log(event.id);
         }
         
     }
@@ -52,8 +51,7 @@ function keyDecision(event){
             clear();   
         }
         else if(event.id == '='){
-            if(a==''){
-                // console.log('No A');
+            if(a==''|| b==''){
             }
             else{
                 calculate();
@@ -66,11 +64,9 @@ function keyDecision(event){
                 b='';
                 operation = event.id;
                 display();
-                console.log(operation);
             }
             else{
                 // In case more than 1 operator is entered 
-                console.log(operation);
                 // in case of two or more multiply and divide 
                 if(b=='' ){
                     operation = event.id;
